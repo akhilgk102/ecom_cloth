@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%} Verify {%endblock%}
+
+
+{%block main_block%}
+
+
+
+<div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+
+        <div class="col-lg-6 col-10">
+            <img src="{%static 'images/sms.png'%}" alt="" class="responsive-img">
+        </div>
+
+        <div class="col-lg-6 col-10 p-5 shadow rounded border">
+            <h3 class="text-center mb-3">Check Email or Phone</h3>
+            <p>{{email}}</p>
+            <form action="" method="post">
+                {%csrf_token%}
+
+                <label for="otp">Enter OTP:</label>
+                <input type="text" name="otp" id="" class="form-control" placeholder="Enter Your OTP">
+
+
+                <div class="row mt-4">
+                    <div class="col-6 d-grid">
+                        <button type="submit" class="btn btn-success">Verify</button>
+                    </div>
+                    <div class="col-6 d-grid">
+                        <button type="submit" class="btn btn-danger">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}
